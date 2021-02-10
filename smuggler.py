@@ -198,6 +198,7 @@ class Desyncr():
 
 
 	def _create_exec_test(self, name, te_payload):
+
 		def pretty_print(name, dismsg):
 			spacing = 13
 			sys.stdout.write("\r"+" "*100+"\r")
@@ -227,6 +228,7 @@ class Desyncr():
 			fname = os.path.realpath(os.path.dirname(_me)) + "/payloads/%s_%s_%s.txt" % (furl,ptype,name)
 			pretty_print("CRITICAL", "%s Payload: %s URL: %s\n" % \
 			(Fore.MAGENTA+ptype, Fore.CYAN+fname+Fore.MAGENTA, Fore.CYAN+self._url))
+			print(f"[{ptype}] [http] [critical] {self._url}")
 			with open(fname, 'wb') as file:
 				file.write(bytes(str(payload),'utf-8'))
 
